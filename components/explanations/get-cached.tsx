@@ -28,8 +28,7 @@ export const GetCached = () => {
             onClick={async () => {
               const response = await fetch("/api/get-cached");
               const data = await response.json();
-              console.log("status : ", response.status);
-              setResponse(data);
+              setResponse({ ...data, status: response.status });
             }}
           >
             try it !

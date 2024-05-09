@@ -22,8 +22,11 @@ export const GetSession = () => {
           Here is shown the default behavior of NextAuth. I haven&apos;t
           investigate if it&apos;s possible to change the default behavior.
           <br />
-          This route is dynamic because NextAuth will look at the cookies to get
-          the session.
+          Vercel considers that a route that uses cookies is dynamic.
+          <br />
+          NextAuth looks at the cookies to get the session.
+          <br />
+          So, an API route that gets the NextAuth session is dynamic.
         </p>
         <div className="flex gap-10 items-center">
           <Button
