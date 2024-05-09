@@ -8,6 +8,8 @@ export async function GET() {
   console.log(`current session : ${JSON.stringify(session)}`);
 
   return NextResponse.json({
-    message: JSON.stringify(session),
+    message: `Hello from dynamic route with session: ${JSON.stringify(
+      session
+    )}`,
   });
 }
