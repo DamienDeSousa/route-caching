@@ -9,7 +9,6 @@ import {
 import { Button } from "../ui/button";
 
 export const GetCached = () => {
-  const [status, setStatus] = useState<number>();
   const [response, setResponse] = useState<object>();
 
   return (
@@ -29,17 +28,11 @@ export const GetCached = () => {
             onClick={async () => {
               const response = await fetch("/api/get-cached");
               const data = await response.json();
-              console.log(response.redirected);
-              setStatus(response.status);
               setResponse(data);
             }}
           >
             try it !
           </Button>
-          {status === 304 && <p>Route is cached !</p>}
-          {status === 200 && (
-            <p>It seems that you desable cache from your browser</p>
-          )}
           {response && <pre>{JSON.stringify(response)}</pre>}
         </div>
       </AccordionContent>
