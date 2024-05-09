@@ -18,6 +18,9 @@ export default function Home() {
         call the following route:{" "}
         <code>/api/get-with-query-param?toto=something</code>
       </p>
+      <p>
+        call the following route: <code>/api/get-session</code>
+      </p>
     </div>
   );
 }
