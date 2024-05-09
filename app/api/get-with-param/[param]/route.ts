@@ -4,9 +4,9 @@ export async function GET(
   request: NextRequest,
   { params }: { params: { param: string } }
 ) {
-  console.log("Did you see me ?");
+  console.log("I'm not a cached route because I have a param in my url!");
 
   return NextResponse.json({
-    message: `Hello from a cached route with param ${params.param}!`,
+    message: `Hello from route with param ${params.param}!`,
   });
 }

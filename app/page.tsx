@@ -14,6 +14,10 @@ export default function Home() {
       <p>
         call the following route: <code>/api/get-with-param/something</code>
       </p>
+      <p>
+        call the following route:{" "}
+        <code>/api/get-with-query-param?toto=something</code>
+      </p>
     </div>
   );
 }
