@@ -1,10 +1,13 @@
+import { GetCached } from "@/components/explanations/get-cached";
+import { Accordion } from "@/components/ui/accordion";
+
 export default function Home() {
   return (
-    <div>
+    <div className="px-10">
       <h1>Next.js + TypeScript API</h1>
-      <p>
-        call the following route: <code>/api/get-cached</code>
-      </p>
+      <Accordion type="single" collapsible>
+        <GetCached />
+      </Accordion>
       <p>
         call the following route: <code>/api/get-dynamic</code>
       </p>
