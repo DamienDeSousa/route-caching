@@ -8,27 +8,29 @@ import {
 } from "../ui/accordion";
 import { Button } from "../ui/button";
 
-export const GetCached = () => {
+export const GetSession = () => {
   const [response, setResponse] = useState<object>();
 
   return (
-    <AccordionItem value="item-1">
-      <AccordionTrigger>/api/get-cached</AccordionTrigger>
+    <AccordionItem value="item-6">
+      <AccordionTrigger>/api/get-session (NextAuth)</AccordionTrigger>
       <AccordionContent className="flex flex-col gap-2">
         <p>
-          This route will be cached indefinitely.
+          In this example, I use NextAuth to manage session. I use a very simple
+          auth config. I just want to show you how to get the session.
           <br />
-          Indeed, when no option is set, the default behaviour is
-          &quot;auto&quot;. this means that it will cache as much as possible
-          without preventing any components from opting into dynamic behavior.
+          Here is shown the default behavior of NextAuth. I haven&apos;t
+          investigate if it&apos;s possible to change the default behavior.
+          <br />
+          This route is dynamic because NextAuth will look at the cookies to get
+          the session.
         </p>
         <div className="flex gap-10 items-center">
           <Button
             className="w-fit"
             onClick={async () => {
-              const response = await fetch("/api/get-cached");
+              const response = await fetch("/api/get-session");
               const data = await response.json();
-              console.log("status : ", response.status);
               setResponse(data);
             }}
           >

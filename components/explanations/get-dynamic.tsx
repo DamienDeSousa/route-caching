@@ -8,27 +8,25 @@ import {
 } from "../ui/accordion";
 import { Button } from "../ui/button";
 
-export const GetCached = () => {
+export const GetDynamic = () => {
   const [response, setResponse] = useState<object>();
 
   return (
-    <AccordionItem value="item-1">
-      <AccordionTrigger>/api/get-cached</AccordionTrigger>
+    <AccordionItem value="item-2">
+      <AccordionTrigger>/api/get-dynamic</AccordionTrigger>
       <AccordionContent className="flex flex-col gap-2">
         <p>
-          This route will be cached indefinitely.
+          This route will be executed every time it&apos;s called.
           <br />
-          Indeed, when no option is set, the default behaviour is
-          &quot;auto&quot;. this means that it will cache as much as possible
-          without preventing any components from opting into dynamic behavior.
+          Indeed, when dynamic option is set to &quot;force-dynamic&quot;, then
+          it will be execute every time you call it.
         </p>
         <div className="flex gap-10 items-center">
           <Button
             className="w-fit"
             onClick={async () => {
-              const response = await fetch("/api/get-cached");
+              const response = await fetch("/api/get-dynamic");
               const data = await response.json();
-              console.log("status : ", response.status);
               setResponse(data);
             }}
           >

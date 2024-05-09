@@ -7,6 +7,6 @@ export async function GET(
   console.log("I'm not a cached route because I have a param in my url!");
 
   return NextResponse.json({
-    message: `Hello from route with param ${params.param}!`,
+    message: `Hello from dynamic route with param ${params.param}!`,
   });
 }

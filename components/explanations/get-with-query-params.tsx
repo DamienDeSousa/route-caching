@@ -8,27 +8,28 @@ import {
 } from "../ui/accordion";
 import { Button } from "../ui/button";
 
-export const GetCached = () => {
+export const GetWithQueryParams = () => {
   const [response, setResponse] = useState<object>();
 
   return (
-    <AccordionItem value="item-1">
-      <AccordionTrigger>/api/get-cached</AccordionTrigger>
+    <AccordionItem value="item-5">
+      <AccordionTrigger>/api/get-with-query-param</AccordionTrigger>
       <AccordionContent className="flex flex-col gap-2">
         <p>
-          This route will be cached indefinitely.
+          This route is dynamic.
           <br />
-          Indeed, when no option is set, the default behaviour is
-          &quot;auto&quot;. this means that it will cache as much as possible
-          without preventing any components from opting into dynamic behavior.
+          Indeed, a route with a query paramter is a dynamic route.
+          <br />
+          Just as reminder, a parameter is something like /api/hello?name=toto.
         </p>
         <div className="flex gap-10 items-center">
           <Button
             className="w-fit"
             onClick={async () => {
-              const response = await fetch("/api/get-cached");
+              const response = await fetch(
+                "/api/get-with-query-param?toto=something"
+              );
               const data = await response.json();
-              console.log("status : ", response.status);
               setResponse(data);
             }}
           >
