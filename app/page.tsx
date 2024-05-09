@@ -5,6 +5,9 @@ export default function Home() {
       <p>
         call the following route: <code>/api/get-cached</code>
       </p>
+      <p>
+        call the following route: <code>/api/get-cached</code>
+      </p>
     </div>
   );
 }
