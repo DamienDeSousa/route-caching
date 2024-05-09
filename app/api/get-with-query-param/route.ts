@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
-  console.log("I'm not a cached route because I have query param in my url!");
+  console.log("I'm a dynamic route because I have query param in my url!");
 
   const url = request.nextUrl;
   const queryParams = {} as Record<string, string>;
