@@ -6,7 +6,10 @@ export default function Home() {
         call the following route: <code>/api/get-cached</code>
       </p>
       <p>
-        call the following route: <code>/api/get-cached</code>
+        call the following route: <code>/api/get-dynamic</code>
+      </p>
+      <p>
+        call the following route: <code>/api/get-cached-with-zero-second</code>
       </p>
     </div>
   );
