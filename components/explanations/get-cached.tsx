@@ -29,6 +29,7 @@ export const GetCached = () => {
             onClick={async () => {
               const response = await fetch("/api/get-cached");
               const data = await response.json();
+              console.log(response.status);
               setStatus(response.status);
               setResponse(data);
             }}
